@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <script defer src="/app.js"></script>
+</head>
+<body>
+<h1>User Management</h1>
+
+<button onclick="showAddUserForm()">Add User</button>
+
+<div>
+    <label for="searchName">Search by First Name:</label>
+    <input type="text" id="searchName" placeholder="Enter first name" />
+    <button onclick="filterUsersByName(document.getElementById('searchName').value)">Filter</button>
+</div>
+
+<table id="userTable">
+    <thead>
+    <tr>
+        <th>First Name Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Birth date</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<div id="userForm" style="display:none;">
+    <h2 id="formTitle">Add User</h2>
+    <form id="userFormElement">
+        <input type="hidden" id="userId" />
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required /><br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required /><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required /><br>
+        <label for="birthDate">Birth date:</label>
+        <input type="date" id="birthDate" required /><br>
+        <div id="errorMessage" style="display:none; color: red;"></div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
+
+
